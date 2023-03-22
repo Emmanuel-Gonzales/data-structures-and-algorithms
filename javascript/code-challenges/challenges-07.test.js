@@ -140,8 +140,8 @@ const listFoods = (recipe) => {
   let result = [];
   recipe.ingredients.forEach(ingredient => {
     let removedNum = ingredient.slice(ingredient.indexOf(' ') + 1);
-    let removeUnit = removedNum.slice(removedNum.indexOf(' ') + 1);
-    result.push(removeUnit);
+    let removeUnits = removedNum.slice(removedNum.indexOf(' ') + 1);
+    result.push(removeUnits);
   });
   return result;
 };
