@@ -1,5 +1,7 @@
 'use strict';
 
+const { remove } = require("cheerio/lib/api/manipulation");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -136,7 +138,11 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(ingredient => {
+    let removedNum = ingredient.slice(ingredient.indexOf(' ') + 1);
+    let removeUnit = removedNum.slice(removedNum.indexOf(' ') + 1);
+    result.push(removeUnit);
+  });
   return result;
 };
 
