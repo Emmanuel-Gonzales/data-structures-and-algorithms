@@ -51,8 +51,8 @@ Write a function named joinArray that takes an array and joins all of the elemen
 
 const joinArray = (arr) => {
   // Solution code here...
-  let newArr = arr.join(' ');
-  return newArr;
+  let newsArr = arr.join(' ');
+  return newsArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
