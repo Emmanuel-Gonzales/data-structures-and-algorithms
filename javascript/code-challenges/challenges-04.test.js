@@ -98,7 +98,7 @@ Here is an example of the input:
 const sortByPrice = (arr) => {
   // Solution code here...
   return arr.sort((a, b) => a - b);
-}
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
