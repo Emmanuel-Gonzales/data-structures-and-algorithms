@@ -4,7 +4,7 @@ Write a function to reverse the items in an array
 
 ## Whiteboard Process
 
-[Whiteboard](assets/Whitebord 1.png)
+![Whiteboard](/assets/Whitebord-01.png)
 
 ## Approach & Efficiency
 
