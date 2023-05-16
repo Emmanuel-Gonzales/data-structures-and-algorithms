@@ -25,3 +25,4 @@ To run your tests
 ## Table of Contents
 
 - [Challenge 01: Array Reverse](401-javascript/array-reverse/README.md)
+- [Challange 01: Insert Shift Array](401-javascript/insertShiftArray/README.md)
