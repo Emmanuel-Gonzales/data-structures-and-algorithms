@@ -26,3 +26,4 @@ To run your tests
 
 - [Challenge 01: Array Reverse](401-javascript/array-reverse/README.md)
 - [Challange 01: Insert Shift Array](401-javascript/insertShiftArray/README.md)
+- [Challange 06: Linked List Insertion](401-javascript/linked-list-insertions/README.md)
