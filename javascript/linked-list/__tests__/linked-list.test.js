@@ -64,3 +64,4 @@ describe('Linked List', () => {
     expect(list.toString()).toEqual('a -> b -> c -> NULL');
   });
 });
+
