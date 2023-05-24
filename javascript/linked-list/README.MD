@@ -7,6 +7,7 @@ Intro to linked links, create a class for Linked List in my code.
 Not required for this challange
 
 ![Tests](../assets/code05.png)
+![kth test](../assets/Whitebord-7.png)
 
 ## Approach & Efficiency
 

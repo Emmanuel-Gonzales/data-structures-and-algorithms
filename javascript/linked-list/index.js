@@ -53,6 +53,25 @@ class LinkedList {
     result += ' -> NULL';
     return result;
   }
+  kthFromEnd(k) {
+    if (!this.head || k <= 0) {
+      return null;
+    }
+    let current = this.head;
+    let currentTwo = this.head;
+    for (let i = 0; i < k; i++) {
+      if (current) {
+        current= current.next;
+      } else {
+        return null;
+      }
+    }
+    while (current) {
+      currentTwo = currentTwo.next;
+      current= current.next;
+    }
+    return currentTwo.data; //
+  }
 }
 
 module.exports = LinkedList;
