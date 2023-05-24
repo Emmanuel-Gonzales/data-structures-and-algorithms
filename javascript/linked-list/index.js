@@ -61,18 +61,40 @@ class LinkedList {
     let currentTwo = this.head;
     for (let i = 0; i < k; i++) {
       if (current) {
-        current= current.next;
+        current = current.next;
       } else {
         return null;
       }
     }
     while (current) {
       currentTwo = currentTwo.next;
-      current= current.next;
+      current = current.next;
     }
-    return currentTwo.data; //
+    return currentTwo.data;
+  }
+
+  zippedList(list1, list2) {
+    if (!list1.head) return list2;
+    if (!list2.head) return list1;
+    if (!list1.head && !list2.head) return null;
+
+    let zippedList = new LinkedList();
+    let current1 = list1.head;
+    let current2 = list2.head;
+    let next1 = list1.next;
+    let next2 = list2.next;
+
+    while (!list1.next) {
+      zippedList.append(current1);
+      current1 = next1;
+
+      while (!list2.next) {
+        zippedList.append(current2);
+        current2 = next2;
+      }
+    }
+    return zippedList;
   }
 }
 
 module.exports = LinkedList;
-
