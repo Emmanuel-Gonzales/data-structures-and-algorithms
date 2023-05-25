@@ -1,4 +1,5 @@
 'use strict';
+
 const LinkedList = require('./index');
 describe('Linked List', () => {
   test('Can successfully instantiate and empty linked list', () => {
