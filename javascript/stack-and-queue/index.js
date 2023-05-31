@@ -69,9 +69,38 @@ class PseudoQueue {
   }
 }
 
+class AnimalShelter {
+  constructor() {
+    this.cats = new Queue();
+    this.dogs = new Queue();
+  }
 
+  // Define a method called enqueue which takes animal as an argument. Animal can be either a dog or a cat object.
+  enqueue(animal) {
+    let newAnimal = new Animal(animal.name, animal.species);
+    if (newAnimal.species === 'cat') {
+      this.cats.enqueue(newAnimal);
+    } else if (newAnimal.species === 'dog') {
+      this.dogs.enqueue(newAnimal);
+    } else {
+      return 'Animal must be a cat or a dog';
+    }
+  }
+
+  // Define a method called dequeue that takes pref as an argument. pref can be either 'dog' or 'cat'.
+  dequeue(pref) {
+    if (pref === 'cat') {
+      return this.cats.dequeue();
+    } else if (pref === 'dog') {
+      return this.dogs.dequeue();
+    } else {
+      return null;
+    }
+  }
+}
 
 module.exports = {
   Stack,
   PseudoQueue,
+  AnimalShelter,
 };
