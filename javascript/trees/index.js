@@ -74,8 +74,29 @@ class Tree {
     return results;
   }
 
+  maxOrder() {
+    let max;
 
+    const transverse = (node) => {
+      if (node.left || node.right) {
+        if (node.left.value > node.right.value) {
+          console.log(node.left);
+          transverse(node.left);
+        }
+        if (node.left.value > node.right.value) {
+          console.log(node.left);
+          transverse(node.right);
+        }
+        if (node.left === null && node.right === null) {
+          return max = node.value;
+        }
+      }
+    };
+    transverse(this.root);
+    return max;
+  }
 }
+
 class BinarySearchTree extends Tree {
   constructor() {
     super();
