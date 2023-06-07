@@ -74,6 +74,7 @@ class Tree {
     return results;
   }
 
+  // CODE CHALLENGE 16
   maxOrder() {
     let max;
 
@@ -175,3 +176,4 @@ let postResults = tree.postOrder();
 console.log('PostOrder',postResults);
 
 module.exports = { Node, KaryNode, Tree, BinarySearchTree };
+
