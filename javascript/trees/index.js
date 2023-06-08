@@ -158,6 +158,46 @@ class BinarySearchTree extends Tree {
 
 }
 
+class KaryTree {
+  constructor() {
+    this.root = null;
+  }
+
+  insert(value) {
+    const newNode = new KaryNode(value);
+
+    if (!this.root) {
+      this.root = newNode;
+    } else {
+      this.root.children.push(newNode);
+    }
+  }
+}
+
+function fizzBuzz(tree) {
+  if (!tree) {
+    return null;
+  }
+
+  let traverse = (node) => {
+    for (let child of node.children) {
+      traverse(child);
+    }
+
+    if (node.value % 3 === 0 && node.value % 5 === 0) {
+      node.value = 'FizzBuzz';
+    } else if (node.value % 5 === 0) {
+      node.value = 'Buzz';
+    } else if (node.value % 3 === 0) {
+      node.value = 'Fizz';
+    }
+  };
+
+  traverse(tree.root);
+
+  return tree;
+}
+
 let tree = new Tree();
 tree.root = new Node(10);
 tree.root.left = new Node(5);
@@ -175,5 +215,5 @@ console.log('InOrder',inResults);
 let postResults = tree.postOrder();
 console.log('PostOrder',postResults);
 
-module.exports = { Node, KaryNode, Tree, BinarySearchTree };
+module.exports = { Node, KaryNode, Tree, BinarySearchTree, KaryTree, fizzBuzz };
 
