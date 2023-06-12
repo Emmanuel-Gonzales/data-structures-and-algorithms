@@ -174,29 +174,32 @@ class KaryTree {
   }
 }
 
-function fizzBuzz(tree) {
+let fizzBuzz = (tree) => {
   if (!tree) {
     return null;
   }
 
   let traverse = (node) => {
-    for (let child of node.children) {
-      traverse(child);
-    }
 
     if (node.value % 3 === 0 && node.value % 5 === 0) {
-      node.value = 'FizzBuzz';
+      node.value = 'fizzbuzz';
     } else if (node.value % 5 === 0) {
-      node.value = 'Buzz';
+      node.value = 'buzz';
     } else if (node.value % 3 === 0) {
-      node.value = 'Fizz';
+      node.value = 'fizz';
+    }
+
+    for (let i = 0; i < node.children.length; i++) {
+      if(node.children[i]){
+        node.children[i] = traverse(node.children[i]);
+      }
     }
   };
 
   traverse(tree.root);
 
   return tree;
-}
+};
 
 let tree = new Tree();
 tree.root = new Node(10);

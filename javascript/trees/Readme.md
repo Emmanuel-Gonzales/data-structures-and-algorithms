@@ -30,3 +30,7 @@ Kaeden O'Meara
 Used info from the lecture to make the base functions. Added the extra from trial and error
 
 We collaborated to find the solution using notes from the previous challenge.
+
+## FizzBuzz Soulution
+
+![FizzBuzz Test](../assets/proof-18.png)
