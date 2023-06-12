@@ -9,16 +9,19 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
-  };
-};
+  }
 
   append(value) {
-    const newNode = new Node(value);
+    let newNode = new Node(value);
     if (!this.head) {
       this.head = newNode;
-    } else {
-      this.tail.next = newNode;
+      return;
     }
+    let current = this.head;
+    while (current.next) {
+      current = current.next;
+    }
+    current.next = newNode;
   }
 
   insertBefore(value, valueBefore) {
@@ -29,7 +32,7 @@ class LinkedList {
       newNode.next = this.head;
       this.head = newNode;
     } else {
-      return error
+      return 'error'
     }
   }
 
@@ -49,3 +52,9 @@ class LinkedList {
     }
     throw new Error('Value not found');
   }
+}
+
+
+
+
+module.exports = {Node, LinkedList};
