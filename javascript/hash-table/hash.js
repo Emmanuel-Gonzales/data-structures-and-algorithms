@@ -35,30 +35,48 @@ class HashTable {
     this.buckets[position] = data;
   }
 
-  get(key){
+  get(key) {
     let position = this.hash(key);
-    if(this.buckets[position]){
+    if (this.buckets[position]) {
       console.log(this.buckets[position]);
       return this.buckets[position][key];
     }
   }
 
-  has(key){
+  has(key) {
     let position = this.hash(key);
     let result = this.buckets[position] ? true : false;
     return result;
   }
 
-  keys(){
+  keys() {
     let results = this.buckets.reduce((keysArr, bucket) => {
-      if(bucket){
+      if (bucket) {
         // keysArr.push(Object.keys(bucket)[0]);
         return [...keysArr, ...Object.keys(bucket)];
-      }else{
+      } else {
         return keysArr;
       }
     }, []);
     return results;
+  }
+
+  // CODE CHALLANGE 13 "hashmap-repeated-word"
+  repeatedWords(key) {
+    let str = this.get(key);
+    let arr = str.split(' ');
+    let repeatedWord = null;
+
+    for (let i = 0; i < arr.length; i++) {
+      let word = arr[i];
+
+      if (arr.indexOf(word) !== i) {
+        // Found a repeated word
+        repeatedWord = word;
+      }
+    }
+
+    return repeatedWord;
   }
 }
 
@@ -73,6 +91,7 @@ console.log('hashTwo:', hashTwo);
 
 table.set('Ryan', 'this is my value');
 table.set('kati', 'how do we define values');
+table.set('repeatTest', 'Once upon a time, there was a brave princess who');
 
 console.log('updated table:', table);
 
@@ -81,5 +100,7 @@ console.log('has works!', table.has('Ryan'));
 console.log('has works!', table.has('Lucky'));
 let keys = table.keys();
 console.log('keys:', keys);
+
+console.log('repeated words!', table.repeatedWords('repeatTest'));
 
 module.exports = { HashTable };
